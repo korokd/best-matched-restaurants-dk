@@ -14,8 +14,7 @@ config :best_matched_restaurants_dk, BestMatchedRestaurantsDkWeb.Endpoint,
     formats: [json: BestMatchedRestaurantsDkWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: BestMatchedRestaurantsDk.PubSub,
-  live_view: [signing_salt: "PhCyq5Rj"]
+  pubsub_server: BestMatchedRestaurantsDk.PubSub
 
 # Configures Elixir's Logger
 config :logger, :console,
