@@ -9,5 +9,9 @@ defmodule BestMatchedRestaurantsDkWeb.Router do
     pipe_through :api
   end
 
+  scope "/api/restaurants", BestMatchedRestaurantsDkWeb do
+    pipe_through :api
 
+    get "/", RestaurantController, :index
+  end
 end
