@@ -58,6 +58,7 @@ defmodule BestMatchedRestaurantsDk.RestaurantsTest do
         })
 
       restaurants
+      |> IO.inspect()
       |> Enum.all?(fn r -> r.price <= 40 end)
       |> assert
     end
@@ -97,9 +98,9 @@ defmodule BestMatchedRestaurantsDk.RestaurantsTest do
     restaurants =
       Restaurants.list_restaurants(%{
         name: nil,
-        min_rating: "4",
-        max_distance: "1",
-        max_price: "10",
+        min_rating: 4,
+        max_distance: 1,
+        max_price: 10,
         cuisine_id: "11"
       })
 
@@ -107,7 +108,7 @@ defmodule BestMatchedRestaurantsDk.RestaurantsTest do
 
     restaurants
     |> Enum.all?(fn r ->
-      r.customer_rating >= "4" && r.distance <= "1" && r.price <= "10" && r.cuisine_id == "11"
+      r.customer_rating >= 4 && r.distance <= 1 && r.price <= 10 && r.cuisine_id == "11"
     end)
     |> assert
   end

@@ -1,5 +1,4 @@
 defmodule BestMatchedRestaurantsDkWeb.RestaurantControllerTest do
-  alias BestMatchedRestaurantsDk.Restaurants.Restaurant
   use BestMatchedRestaurantsDkWeb.ConnCase
 
   setup %{conn: conn} do
@@ -33,7 +32,7 @@ defmodule BestMatchedRestaurantsDkWeb.RestaurantControllerTest do
                "customer_rating" => 4,
                "distance" => 1,
                "price" => 10,
-               "cuisine_id" => 11
+               "cuisine_id" => "11"
              } = restaurant
     end
   end

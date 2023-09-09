@@ -1,4 +1,5 @@
 defmodule BestMatchedRestaurantsDk.Restaurants do
+  alias BestMatchedRestaurantsDk.Utils
   alias BestMatchedRestaurantsDk.CsvReader
   alias BestMatchedRestaurantsDk.Restaurants.Restaurant
 
@@ -58,17 +59,17 @@ defmodule BestMatchedRestaurantsDk.Restaurants do
   defp filter_line_by_min_rating(_, nil), do: true
 
   defp filter_line_by_min_rating([_, rating | _], min_rating),
-    do: rating >= min_rating
+    do: Utils.int_from_string(rating) >= min_rating
 
   defp filter_line_by_max_distance(_, nil), do: true
 
   defp filter_line_by_max_distance([_, _, distance | _], max_distance),
-    do: distance <= max_distance
+    do: Utils.int_from_string(distance) <= max_distance
 
   defp filter_line_by_max_price(_, nil), do: true
 
   defp filter_line_by_max_price([_, _, _, price | _], max_price),
-    do: price <= max_price
+    do: Utils.int_from_string(price) <= max_price
 
   defp filter_line_by_cuisine_id(_, nil), do: true
 
