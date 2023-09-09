@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "4000:4000"
+    environment:
+      - MIX_ENV=prod
+      - SECRET_KEY_BASE=Vabrp1Sfwq4/tHAiKdWbfuDLvU7kfCe432IqQAozFN2XPpEu1MeXsVvZEpluErGY
