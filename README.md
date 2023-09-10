@@ -26,3 +26,6 @@ An example of a full URL for the endpoint above would be `http://localhost:4000/
 
 ### Running
 - Run `mix test`
+
+## Assumptions
+- Even though the UI for a cuisine filter would probably be some sort of dropdown that lists the name of each cuisine, generally the cuisine's ID would still be accessible and would be preferred to communicate with the api over the name. Hence, I made the parameter be `cuisine_id` and not `cuisine_name`.
