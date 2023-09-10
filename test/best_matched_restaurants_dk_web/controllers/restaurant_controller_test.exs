@@ -32,7 +32,10 @@ defmodule BestMatchedRestaurantsDkWeb.RestaurantControllerTest do
                "customer_rating" => 4,
                "distance" => 1,
                "price" => 10,
-               "cuisine_id" => "11"
+               "cuisine" => %{
+                 "id" => "11",
+                 "name" => "Spanish"
+               }
              } = restaurant
     end
   end

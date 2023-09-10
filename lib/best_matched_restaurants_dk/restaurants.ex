@@ -4,7 +4,7 @@ defmodule BestMatchedRestaurantsDk.Restaurants do
   alias BestMatchedRestaurantsDk.Restaurants.Restaurant
 
   @priv_dir :code.priv_dir(:best_matched_restaurants_dk)
-  @restaurant_csv_path Path.join([@priv_dir, "csv/restaurants.csv"])
+  @restaurants_csv_path Path.join([@priv_dir, "csv/restaurants.csv"])
 
   def list_restaurants(params) do
     read_csv()
@@ -15,7 +15,7 @@ defmodule BestMatchedRestaurantsDk.Restaurants do
   end
 
   defp read_csv() do
-    @restaurant_csv_path
+    @restaurants_csv_path
     |> File.stream!()
     |> CsvReader.parse_stream()
   end

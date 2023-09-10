@@ -26,3 +26,5 @@ An example of a full URL for the endpoint above would be `http://localhost:4000/
 
 ## Assumptions
 - Even though the UI for a cuisine filter would probably be some sort of dropdown that lists the name of each cuisine, generally the cuisine's ID would still be accessible and would be preferred to communicate with the api over the name. Hence, I made the parameter be `cuisine_id` and not `cuisine_name`.
+
+- Since I'm not using the `cuisines.csv` to map from name to ID, I've decided to go the opposite way to find use for it: search for the cuisine with the given ID, and append a `cuisine` object to the `restaurant` object.

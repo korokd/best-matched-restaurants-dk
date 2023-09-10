@@ -21,7 +21,7 @@ defmodule BestMatchedRestaurantsDkWeb.RestaurantJSON do
       customer_rating: restaurant.customer_rating,
       distance: restaurant.distance,
       price: restaurant.price,
-      cuisine_id: restaurant.cuisine_id
+      cuisine: restaurant.cuisine
     }
   end
 end
