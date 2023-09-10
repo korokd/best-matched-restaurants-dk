@@ -23,3 +23,6 @@ An example of a full URL for the endpoint above would be `http://localhost:4000/
 - Make sure you have [ASDF](https://github.com/asdf-vm/asdf), [ASDF-Erlang](https://github.com/asdf-vm/asdf-erlang), and [ASDF-Elixir](https://github.com/asdf-vm/asdf-elixir) installed
 - Run `asdf install` from within the project folder
 - Run `mix test`
+
+## Assumptions
+- Even though the UI for a cuisine filter would probably be some sort of dropdown that lists the name of each cuisine, generally the cuisine's ID would still be accessible and would be preferred to communicate with the api over the name. Hence, I made the parameter be `cuisine_id` and not `cuisine_name`.
