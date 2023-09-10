@@ -1,0 +1,41 @@
+name: Elixir CI
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Elixir
+        uses: actions/setup-elixir@v1
+        with:
+          elixir-version: 1.14  # Set this to your Elixir version
+          otp-version: 25.0  # Set this to your OTP version
+
+      - name: Restore Mix and Build Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-
+
+      - name: Install Dependencies
+        run: mix deps.get
+
+      - name: Compile Code
+        run: mix compile
+
+      - name: Run Tests
+        run: mix test
+        env:
+          MIX_ENV: test

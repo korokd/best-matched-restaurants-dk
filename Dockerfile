@@ -1,5 +1,5 @@
 # Use the official Elixir image as a parent image
-FROM elixir:1.15-slim
+FROM elixir:1.14-slim
 
 # Install hex, rebar, and Node.js (for Phoenix assets)
 RUN mix local.hex --force && \
