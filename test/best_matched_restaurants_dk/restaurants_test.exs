@@ -74,7 +74,7 @@ defmodule BestMatchedRestaurantsDk.RestaurantsTest do
         })
 
       restaurants
-      |> Enum.all?(fn r -> r.cuisine_id == 1 end)
+      |> Enum.all?(fn r -> r.cuisine.id == 1 end)
       |> assert
     end
   end
@@ -108,7 +108,7 @@ defmodule BestMatchedRestaurantsDk.RestaurantsTest do
 
     restaurants
     |> Enum.all?(fn r ->
-      r.customer_rating >= 4 && r.distance <= 1 && r.price <= 10 && r.cuisine_id == "11"
+      r.customer_rating >= 4 && r.distance <= 1 && r.price <= 10 && r.cuisine.id == "11"
     end)
     |> assert
   end
